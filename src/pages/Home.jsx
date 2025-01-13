@@ -20,20 +20,17 @@ const Home = () => {
   const [displayedText, setDisplayedText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
 
-  // Adjustable timing parameters
-  const typingSpeed = 60; // Speed for typing text
-  const eraseSpeed = 30; // Speed for erasing text
-  const pauseBeforeErasing = 2000; // Delay before starting erase
-  const pauseBeforeNextTagline = 700; // Delay before new tagline starts typing
+  const typingSpeed = 60;
+  const eraseSpeed = 30;
+  const pauseBeforeErasing = 2000;
+  const pauseBeforeNextTagline = 700;
 
-  // Function to handle erasing
   const eraseText = useCallback(() => {
     if (displayedText.length > 0) {
       setTimeout(() => {
         setDisplayedText(prev => prev.slice(0, -1));
       }, eraseSpeed);
     } else {
-      // Switch to next tagline after erasing completely
       setTimeout(() => {
         setCurrentTagline(prev => (prev + 1) % taglines.length);
         setIsTyping(true);
@@ -41,23 +38,19 @@ const Home = () => {
     }
   }, [displayedText, eraseSpeed, pauseBeforeNextTagline, taglines.length]);
 
-  // Typing and erasing logic
   useEffect(() => {
     let timer;
 
     if (isTyping) {
       if (displayedText.length < taglines[currentTagline].length) {
-        // Typing logic
         timer = setTimeout(() => {
           setDisplayedText(taglines[currentTagline].slice(0, displayedText.length + 1));
         }, typingSpeed);
       } else {
-        // Pause before erasing
         setIsTyping(false);
         timer = setTimeout(eraseText, pauseBeforeErasing);
       }
     } else {
-      // Erasing logic
       timer = setTimeout(eraseText, eraseSpeed);
     }
 
@@ -103,7 +96,6 @@ const Home = () => {
           I'm Usairam Saeed &#128075;
         </motion.h3>
 
-        {/* Tagline Animation */}
         <motion.h1 
           className="text-4xl md:text-5xl font-bold mb-4 text-center max-w-3xl mx-auto h-32"
           initial={{ opacity: 0, y: 20 }}
@@ -118,10 +110,10 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          <Link to="/docs/Usairam Saeed.pdf" className="inline-flex items-center hover:bg-opacity-70 text-white py-2 px-6 border border-zinc-400 transition duration-300 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer">
+          <a href="/docs/Usairam Saeed.pdf" className="inline-flex items-center hover:bg-opacity-70 text-white py-2 px-6 border border-zinc-400 transition duration-300 hover:bg-white hover:text-black" target="_blank" rel="noopener noreferrer">
             <FaFileDownload className="mr-2" />
             Download Resume
-          </Link>
+          </a>
         </motion.div>
         <motion.div 
           className="flex mt-8 space-x-4"
@@ -163,3 +155,4 @@ const Home = () => {
 };
 
 export default Home;
+

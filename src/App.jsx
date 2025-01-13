@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Gallery from './pages/Gallery';
 import Goals from './pages/Goals';
-import Projects from './pages/Projects';
+import Projects from './pages/Projects.jsx';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 
@@ -41,4 +41,3 @@ function App() {
 }
 
 export default App;
-
