@@ -20,7 +20,23 @@ export const otherProjects = [
       description: "A console-based application mimicking Instagram's core functionalities using C++. The project focuses on binary file handling for data storage and retrieval. It includes features like user account management, photo uploading, and basic social interactions.",
       icon: "/images/c++.svg",
       github: "https://github.com/username/console-instagram"
-    }
+    },
+    {
+        title: "Data Structures Project in C++",
+        stack: "C++, Hashing, Heap, Graphs",
+        description: "A comprehensive project focusing on advanced data structures implemented in C++. It includes solutions to complex problems using hashing, heap operations, and graph algorithms, demonstrating efficient data storage and processing techniques.",
+        icon: "/images/c++.svg",
+        github: "https://github.com/saymi313/Data-Structures-Project-Cpp"
+      },
+      {
+        title: "Console-Based Chess Game",
+        stack: "C++, Programming Fundamentals",
+        description: "A console-based Chess game built using core programming fundamental concepts in C++. The project features a functional chessboard, basic game mechanics, move validation, and player turns, providing a simplified yet engaging chess experience.",
+        icon: "/images/c++.svg",
+        github: "https://github.com/saymi313"
+      }
+      
+      
   ];
   
   

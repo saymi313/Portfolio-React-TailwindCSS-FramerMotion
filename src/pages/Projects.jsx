@@ -113,7 +113,7 @@ const Projects = () => {
             {({ open }) => (
               <>
                 <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-zinc-800 rounded-md hover:bg-zinc-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 transition-all duration-200">
-                  {filter}
+                  Filter:  {filter}
                   <ChevronDownIcon
                     className={`w-5 h-5 ml-2 -mr-1 text-violet-200 hover:text-violet-100 transition-transform duration-200 ${
                       open ? 'transform rotate-180' : ''
