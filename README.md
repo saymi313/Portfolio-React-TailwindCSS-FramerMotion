@@ -38,9 +38,11 @@ src/
 
 ### Step 1: Download the Project
 
-1. Clone the repository:
+1. **Clone the repository**  
+   Run the following command to clone the repository to your local machine:
    ```bash
    git clone https://github.com/saymi313/Portfolio-React-TailwindCSS-FramerMotion.git
+
 2. Navigate to the project directory:
    ```bash
    cd Portfolio-React-TailwindCSS-FramerMotion
