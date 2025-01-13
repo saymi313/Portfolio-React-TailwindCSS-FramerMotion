@@ -35,7 +35,7 @@ src/
 │   └── Contact.jsx    # Contact page
 ├── App.js             # Main application entry point
 └── index.js           # React DOM renderer
-
+```
 ### Step 1: Download the Project
 
 1. **Clone the repository**  
@@ -54,7 +54,7 @@ src/
    npm start
 
 🔗 **Live Demo**  
-Check out the live demo of the portfolio [here](https://usairam-saeed.vercel.app/).
+Check out the live demo of the portfolio [Usairam-Saeed-Portfolio](https://usairam-saeed.vercel.app/).
 
 📜 **License**  
 This project is licensed under the MIT License. See the LICENSE file for details.
