@@ -12,7 +12,7 @@ export const mernProjects = [
     stack: "MERN Stack",
     description: "A modern, intuitive student portal for FAST Islamabad students, featuring course management, assignment tracking, progress monitoring, and personalized insights with state management and real-time updates.",    icon:"/images/react.svg",
     icon:"/images/react.svg",
-    liveDemo: "https://github.com/saymi313/Student-Portal-LMS",
+    liveDemo: "https://student-portal-lms.vercel.app/",
     github: "https://github.com/saymi313/Student-Portal-LMS"
   },
   {
