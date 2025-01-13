@@ -129,7 +129,7 @@ const Projects = () => {
                   leaveFrom="transform scale-100 opacity-100"
                   leaveTo="transform scale-95 opacity-0"
                 >
-                  <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-zinc-800 divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-zinc-800 divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
                     <div className="px-1 py-1">
                       {['All', 'Figma', 'MERN', 'Others'].map((item) => (
                         <Menu.Item key={item}>
@@ -156,10 +156,10 @@ const Projects = () => {
           </Menu>
         </div>
         {isMobile ? (
-          <div className="px-4 relative">
+          <div className="px-4 relative z-10">
             <Slider ref={sliderRef} {...sliderSettings}>
               {filteredProjects.map((project, index) => (
-                <div key={index} className="px-4">
+                <div key={index} className="px-4 ">
                   <ProjectCard {...project} />
                 </div>
               ))}
