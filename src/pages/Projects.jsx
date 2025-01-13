@@ -1,18 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, Transition } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/solid';
+import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import Breadcrumbs from '../components/common/Breadcrumbs';
 import ProjectCard from '../components/Projects/ProjectCard';
 import { figmaProjects } from '../data/figma';
 import { mernProjects } from '../data/mern';
 import { otherProjects } from '../data/others';
 import { Pagination } from '@mui/material';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Projects = () => {
   const [filter, setFilter] = useState('All');
   const [page, setPage] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+  const sliderRef = useRef(null);
   const projectsPerPage = 4;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const allProjects = [
     ...figmaProjects,
@@ -34,6 +48,49 @@ const Projects = () => {
 
   const handlePageChange = (event, value) => {
     setPage(value);
+  };
+
+  const CustomPrevArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <button
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-zinc-800 p-2 rounded-full"
+        onClick={() => {
+          onClick();
+          setPage((prevPage) => Math.max(prevPage - 1, 1));
+        }}
+        aria-label="Previous project"
+      >
+        <ChevronLeftIcon className="w-6 h-6 text-white" />
+      </button>
+    );
+  };
+
+  const CustomNextArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <button
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-zinc-800 p-2 rounded-full"
+        onClick={() => {
+          onClick();
+          setPage((prevPage) => Math.min(prevPage + 1, filteredProjects.length));
+        }}
+        aria-label="Next project"
+      >
+        <ChevronRightIcon className="w-6 h-6 text-white" />
+      </button>
+    );
+  };
+
+  const sliderSettings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
+    beforeChange: (current, next) => setPage(next + 1),
   };
 
   return (
@@ -98,65 +155,85 @@ const Projects = () => {
             )}
           </Menu>
         </div>
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 px-10 md:px-20"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4 }}
-        >
-          {currentProjects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
-          ))}
-        </motion.div>
-        <div className="mt-16 flex justify-center">
-          <Pagination 
-            count={pageCount} 
-            page={page} 
-            onChange={handlePageChange}
-            variant="outlined"
-            shape="circular"
-            size="large"
-            sx={{
-              '& .MuiPaginationItem-root': {
-                color: '#fff',
-                borderColor: 'rgba(255, 255, 255, 0.3)',
-                fontWeight: 500,
-                transition: 'all 0.3s ease',
-                margin: '0 4px',
-                '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+        {isMobile ? (
+          <div className="px-4 relative">
+            <Slider ref={sliderRef} {...sliderSettings}>
+              {filteredProjects.map((project, index) => (
+                <div key={index} className="px-4">
+                  <ProjectCard {...project} />
+                </div>
+              ))}
+            </Slider>
+            <div className="text-center  text-sm text-gray-400">
+              <div className="font-semibold mb-2">
+                {page}/{filteredProjects.length}
+              </div>
+              <div>Swipe or use arrows to navigate projects</div>
+            </div>
+          </div>
+        ) : (
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 gap-10 px-10 md:px-20"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            {currentProjects.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
+          </motion.div>
+        )}
+        {!isMobile && (
+          <div className="mt-16 flex justify-center">
+            <Pagination 
+              count={pageCount} 
+              page={page} 
+              onChange={handlePageChange}
+              variant="outlined"
+              shape="circular"
+              size="large"
+              sx={{
+                '& .MuiPaginationItem-root': {
+                  color: '#fff',
+                  borderColor: 'rgba(255, 255, 255, 0.3)',
+                  fontWeight: 500,
+                  transition: 'all 0.3s ease',
+                  margin: '0 4px',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  },
                 },
-              },
-              '& .MuiPaginationItem-page': {
-                border: '2px solid rgba(255, 255, 255, 0.3)',
-                borderRadius: '50%',
-                width: '40px',
-                height: '40px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              },
-              '& .Mui-selected': {
-                backgroundColor: '#000',
-                color: '##fff',
-                borderColor: '#fff',
-                '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                '& .MuiPaginationItem-page': {
+                  border: '2px solid rgba(255, 255, 255, 0.3)',
+                  borderRadius: '50%',
+                  width: '40px',
+                  height: '40px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                 },
-              },
-              '& .MuiPaginationItem-ellipsis': {
-                color: 'rgba(255, 255, 255, 0.7)',
-                backgroundColor: 'transparent',
-              },
-              '& .MuiPaginationItem-previousNext': {
-                border: 'none',
-                '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                '& .Mui-selected': {
+                  backgroundColor: '#000',
+                  color: '#fff',
+                  borderColor: '#fff',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                  },
                 },
-              },
-            }}
-          />
-        </div>
+                '& .MuiPaginationItem-ellipsis': {
+                  color: 'rgba(255, 255, 255, 0.7)',
+                  backgroundColor: 'transparent',
+                },
+                '& .MuiPaginationItem-previousNext': {
+                  border: 'none',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  },
+                },
+              }}
+            />
+          </div>
+        )}
       </motion.div>
     </motion.section>
   );

@@ -7,11 +7,11 @@ export const figmaProjects = [
         figmaLink: "https://www.figma.com/design/RaRCUqzzTXKEwZcd6H57nh/Teen-So-Tera?node-id=0-1&p=f&t=J8gquh9Z41XZdWBt-0"
     },    
     {
-        title: "Railroad Cotton Exchange E-commerce Website Design",
+        title: "Arli Plumbing and Gas Website Revamp",
         stack: "Figma",
-        description: "An e-commerce website design for an international client, implementing HCI principles and focusing on a visually aesthetic, user-friendly interface. Recognized for its seamless shopping experience.",
+        description: "Revamped the Arli Plumbing and Gas website to modernize its design with a visually aesthetic, user-friendly interface, enhancing user experience and brand presence.",
         icon: "/images/icons8-figma.svg",
-        figmaLink: "https://www.figma.com/design/oT6LIE1AvnhiMF6IDGSn0H/Railroad-Cotton-Exchange?node-id=0-1&p=f&t=UfNuqNzdfLcYwY2A-0"
+        figmaLink: "https://www.figma.com/design/E5zEH9WGC56RZ7puGDa8a6/Arli?node-id=0-1&p=f&t=3SetFtYYfx6J7BG7-0"
     },
     {
         title: "Novel Axis Software House Website",
@@ -19,7 +19,15 @@ export const figmaProjects = [
         description: "Crafted a dynamic and engaging website for Novel Axis Software House, focusing on user experience and design aesthetics. The website highlights their innovative solutions, portfolio, and client success stories in a clean, modern layout.",
         icon: "/images/icons8-figma.svg",
         figmaLink: "https://www.figma.com/design/8DAN6nmnWKEiHchWeW4VVm/PORTFOLIO?node-id=0-1&t=3c4oWImCvyI8zPqO-1"
-    },    
+    },  
+    {
+        title: "Railroad E-commerce Website Design",
+        stack: "Figma",
+        description: "An e-commerce website design for an international client, implementing HCI principles and focusing on a visually aesthetic, user-friendly interface. Recognized for its seamless shopping experience.",
+        icon: "/images/icons8-figma.svg",
+        figmaLink: "https://www.figma.com/design/oT6LIE1AvnhiMF6IDGSn0H/Railroad-Cotton-Exchange?node-id=0-1&p=f&t=UfNuqNzdfLcYwY2A-0"
+    },
+     
     {
         title: "Costa Da Morte E-commerce Web Design",
         stack: "Figma",
@@ -27,13 +35,7 @@ export const figmaProjects = [
         icon: "/images/icons8-figma.svg",
         figmaLink: "https://www.figma.com/design/TSn4Lj7Qosr0Rw1VijfIys/Costa-da-Morte?node-id=0-1&p=f&t=AQbQ4MIe57iOiES4-0"
     },    
-    {
-        title: "Arli Plumbing and Gas Website Revamp",
-        stack: "Figma",
-        description: "Revamped the Arli Plumbing and Gas website to modernize its design with a visually aesthetic, user-friendly interface, enhancing user experience and brand presence.",
-        icon: "/images/icons8-figma.svg",
-        figmaLink: "https://www.figma.com/design/E5zEH9WGC56RZ7puGDa8a6/Arli?node-id=0-1&p=f&t=3SetFtYYfx6J7BG7-0"
-    },
+   
     {
         title: "Aegean Taxi, Airport, Port Website Design",
         stack: "Figma",
