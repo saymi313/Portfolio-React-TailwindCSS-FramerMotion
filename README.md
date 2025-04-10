@@ -45,7 +45,7 @@ src/
 
 2. Navigate to the project directory:
    ```bash
-   cd Portfolio-React-TailwindCSS-FramerMotion
+   cd Portfolio
 3. Install Dependencies:
    ```bash
    npm install
