@@ -1,5 +1,5 @@
 const ContactForm = () => (
-    <div className="glass p-6 rounded-xl w-full max-w-sm text-white">
+    <div className=" glass p-6 rounded-xl w-full max-w-sm text-white ">
       <h2 className="text-3xl font-bold mb-6 text-center">Let's Chat</h2>
       <form action="#" className="space-y-4">
         <div>

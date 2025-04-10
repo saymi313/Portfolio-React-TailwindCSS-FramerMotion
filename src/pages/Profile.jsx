@@ -30,12 +30,12 @@ const Profile = () => {
         transition={{ delay: 0.4 }}
       >
         <div className="flex flex-col md:flex-row gap-4">
-          <div className="flex-shrink-0 w-[150px] h-[150px] bg-gray-800">
+          <div className="flex-shrink-0 w-[180px] h-[180px] bg-gray-800">
             <img src="/images/black.jpeg" alt="Profile" className="w-full h-full object-cover rounded-lg" />
           </div>
           <ProfileInfo 
             name="Usairam Saeed"
-            description="Undergraduate Software Engineering student at FAST NUCES Islamabad with a focus on Front-end development and UI/UX design, leveraging the MERN stack to create intuitive and engaging web experiences. Passionate about crafting responsive and visually captivating interfaces, blending technical expertise with design innovation to bring creative ideas to life."
+            description="Full Stack Developer and undergraduate student of Pakistan's top CS University, I am proficient in the MERN stack (MongoDB, Express.js, React.js, Node.js), SQL databases, and modern UI/UX design with Figma. I bring experience with Docker, Linux, Git workflows, and CI/CD using GitHub Actions, along with solid problem-solving skills in Data Structures & Algorithms (DSA). I build scalable, responsive web applications with clean, maintainable code"
           />
         </div>
 

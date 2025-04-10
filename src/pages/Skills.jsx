@@ -9,19 +9,23 @@ const Skills = () => {
     { src: "/images/icons8-css.svg", alt: "CSS3 Icon", name: "CSS3" },
     { src: "/images/icons8-javascript.svg", alt: "JS Icon", name: "JavaScript" },
     { src: "/images/react.svg", alt: "React Icon", name: "React" },
-    { src: "/images/c++.svg", alt: "C++ Icon", name: "C++" },
-    { src: "/images/flutter.svg", alt: "Flutter Icon", name: "Flutter" },
+    { src: "/images/docker.svg", alt: "Docker Icon", name: "Docker" },
     { src: "/images/nodejs-icon.svg", alt: "Node Icon", name: "Node JS" },
+    { src: "/images/express.svg", alt: "Express", name: "Express JS" },
   ];
 
   const additionalSkills = [
-    { src: "/images/icons8-bootstrap.svg", alt: "Bootstrap Icon", name: "Bootstrap" },
+    { src: "/images/c++.svg", alt: "C++ Icon", name: "C++" },
     { src: "/images/icons8-tailwind-css.svg", alt: "Tailwind Icon", name: "Tailwind" },
     { src: "/images/icons8-figma.svg", alt: "Figma Icon", name: "Figma" },
     { src: "/images/icons8-mysql.svg", alt: "MySQL Icon", name: "MySQL" },
     { src: "/images/icons8-linux-96.png", alt: "Linux Icon", name: "Linux" },
     { src: "/images/mongo-svgrepo-com.svg", alt: "Mongo Icon", name: "Mongo db" },
+    { src: "/images/git.svg", alt: "git Icon", name: "Git" },
+    { src: "/images/github.svg", alt: "github Icon", name: "Git Hub" },
+    { src: "/images/icons8-bootstrap.svg", alt: "Bootstrap Icon", name: "Bootstrap" },
     { src: "/images/capcut.png", alt: "Capcut Icon", name: "Capcut" },
+    { src: "/images/lightroom.svg", alt: "lightroom Icon", name: "Lightroom" },
   ];
 
   return (
@@ -87,7 +91,7 @@ const Skills = () => {
             <div className="flex w-3/4 justify-center items-center py-10 bg-black rounded-lg shadow-xl">
               <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold mb-6 text-white">My Interests</h2>
-                <p className="text-lg text-zinc-400 mb-8">I have a deep interest in exploring emerging technologies, particularly in the fields of software development and UI/UX design. Outside of tech, I enjoy traveling to scenic spots, capturing moments through photography, and learning about different cultures. My curiosity drives me to continuously seek new challenges and innovative solutions.</p>
+                <p className="text-lg text-zinc-400 mb-8">I have a deep interest in exploring emerging technologies, particularly in the fields of Software development, AI and UI/UX design. Outside of tech, I enjoy traveling to scenic spots, capturing moments through photography, and learning about different cultures. My curiosity drives me to continuously seek new challenges and innovative solutions.</p>
               </div>
             </div>
           </motion.section>

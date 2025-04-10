@@ -1,5 +1,13 @@
 export const mernProjects = [
   {
+    title: "Sweden Relocators",
+    stack: "MERN Stack",
+    description: "A comprehensive platform designed to help individuals relocating to Sweden. It provides users with essential information on housing, transportation, and other relocation services, built using React, Minimal, MongoDB, Express.js, and Node.js, ensuring a smooth transition for newcomers.",
+    icon: "/images/react.svg",
+    liveDemo: "https://portalclient.vercel.app/", 
+    
+  },  
+  {
     title: "Misty Mounts Tourist Guide",
     stack: "MERN Stack",
     description: "A dynamic tourist guide platform built with React, Mongo db, Express.js and Node.js, offering users detailed information on famous and hidden spots in Northern Pakistan, along with hotel recommendations and real-time updates.",

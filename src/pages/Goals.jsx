@@ -31,16 +31,25 @@ const Goals = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-2 sm:px-10">
             <GoalCard 
               title="Short-Term Goals"
-              description="Enhance my expertise in React and Flutter through advanced projects and certifications. Collaborate on innovative software solutions and contribute to open-source initiatives."
+              description="As a dedicated Full Stack Developer, I aim to deepen my expertise in modern web technologies by advancing my skills in front-end frameworks like React and mastering back-end solutions. I plan to achieve this through hands-on projects, targeted certifications, active contributions to open-source initiatives, and by participating in and winning hackathons to sharpen my problem-solving and collaboration skills."
             />
             <GoalCard 
               title="Long-Term Goals"
-              description="Become a lead software engineer and mentor aspiring developers. Drive impactful projects that blend technology and design to create seamless user experiences. Establish a tech community to foster innovation."
+              description="I want to lead projects that combine AI Engineering and software development to build smart and reliable solutions. My goal is to become a lead software engineer, mentor aspiring developers, and contribute to improving Pakistan's tech industry. I aim to help create a strong tech community that encourages innovation and growth in the technology sector."
             />
             <GoalCard 
-              title="Motivational Quote"
-              description="The future belongs to those who believe in the beauty of their dreams – Eleanor Roosevelt"
-            />
+  title="Motivational Quote"
+  description={
+    <div 
+      dangerouslySetInnerHTML={{
+        __html: `“Success is not final, failure is not fatal: It is the courage to continue that counts.” – <strong class="text-zinc-300">Winston Churchill</strong><br />
+          This quote resonates with my journey as a Full Stack Developer. As I continue to improve my skills and pursue my goals, I believe that perseverance and continuous learning will drive me toward success. The challenges along the way are just stepping stones to greater achievements in both software development and in contributing to the growth of Pakistan's tech industry.`
+      }}
+    />
+  }
+/>
+
+
           </div>
         </div>
       </motion.section>
