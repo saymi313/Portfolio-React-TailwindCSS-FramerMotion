@@ -31,7 +31,7 @@ const Navbar = () => {
     { to: "/goals", text: "Goals" },
     { to: "/projects", text: "Projects" },
     { to: "/skills", text: "Skills" },
-    { to: "/contact", text: "Contact us" }
+    { to: "/contact", text: "Hire Me" }
   ];
 
   return (
